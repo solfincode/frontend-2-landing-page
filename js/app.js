@@ -54,36 +54,36 @@ function scrollEvent(e) {
     //section 1 is active
     nav_section_lists.forEach((el, index) => {
       if (index === 0) {
-        nav_section_lists[index].classList = "activeState";
+        el.classList = "activeState";
       } else {
-        nav_section_lists[index].classList.remove("activeState");
+        el.classList.remove("activeState");
       }
     });
   } else if (moveY > 800 && moveY < 1600) {
     //section 2 is active
     nav_section_lists.forEach((el, index) => {
       if (index === 1) {
-        nav_section_lists[index].classList = "activeState";
+        el.classList = "activeState";
       } else {
-        nav_section_lists[index].classList.remove("activeState");
+        el.classList.remove("activeState");
       }
     });
   } else if (moveY > 1600 && moveY < 2300) {
     //section 3 is active
     nav_section_lists.forEach((el, index) => {
       if (index === 2) {
-        nav_section_lists[index].classList = "activeState";
+        el.classList = "activeState";
       } else {
-        nav_section_lists[index].classList.remove("activeState");
+        el.classList.remove("activeState");
       }
     });
   } else {
     //section 4 is active
     nav_section_lists.forEach((el, index) => {
       if (index === 3) {
-        nav_section_lists[index].classList = "activeState";
+        el.classList = "activeState";
       } else {
-        nav_section_lists[index].classList.remove("activeState");
+        el.classList.remove("activeState");
       }
     });
   }
@@ -146,11 +146,12 @@ if (window.screen.width >= 1100) {
   });
 }
 
-//mobile navbar
+/* --- mobile navbar --- */
 const svg = document.querySelector("svg");
 const menuBtn = document.querySelector(".menu");
 const closeBtn = document.querySelector(".closeIcon");
 
+//set initial state for navbar_list
 navbar_list.classList = "hidden";
 
 function toggleState() {
@@ -158,4 +159,5 @@ function toggleState() {
   closeBtn.classList.toggle("shown");
   navbar_list.classList.toggle("hidden");
 }
+//event listener for menu svg icon
 svg.addEventListener("click", toggleState);
