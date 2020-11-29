@@ -76,6 +76,7 @@ section {
 .navbar__menu li {
   display: inline-block;
   color: white;
+  cursor: pointer;
   /* margin-right: 30px; */
   margin: 20px;
 }
@@ -241,4 +242,43 @@ section.your-active-class .landing__container::after {
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
+}
+
+/* hide menu icon */
+
+@media (max-width: 400px) {
+  .navbar__menu {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 14px 35.73%;
+  }
+  .closeState {
+    padding: 0;
+  }
+  .menu {
+    display: block;
+  }
+  .closeIcon {
+    display: none;
+  }
+  /* menu icon toggle state */
+  .hidden {
+    display: none;
+  }
+  .shown {
+    display: block;
+  }
+}
+@media (min-width: 401px) {
+  .menuGroup {
+    display: none;
+  }
+}
+svg {
+  width: 30px;
+  fill: white;
+  position: relative;
+  top: 2px;
+  left: 186px;
+  cursor: pointer;
 }
