@@ -92,7 +92,7 @@ function scrollEvent(e) {
 window.addEventListener("scroll", scrollEvent);
 
 //scrollTo specific section list based on screen width
-if (window.screen.width > 900) {
+if (window.screen.width >= 1100) {
   nav_section_lists[0].addEventListener("click", function () {
     window.scrollTo({ top: 380, behavior: "smooth" });
   });
@@ -102,13 +102,13 @@ if (window.screen.width > 900) {
   });
 
   nav_section_lists[2].addEventListener("click", function () {
-    window.scrollTo({ top: 1718, behavior: "smooth" });
+    window.scrollTo({ top: 1918, behavior: "smooth" });
   });
 
   nav_section_lists[3].addEventListener("click", function () {
-    window.scrollTo({ top: 2300, behavior: "smooth" });
+    window.scrollTo({ top: 2600, behavior: "smooth" });
   });
-} else if (window.screen.width > 500 && window.screen.width < 900) {
+} else if (window.screen.width >= 700 && window.screen.width < 1100) {
   nav_section_lists[0].addEventListener("click", function () {
     window.scrollTo({ top: 589, behavior: "smooth" });
   });
@@ -124,7 +124,7 @@ if (window.screen.width > 900) {
   nav_section_lists[3].addEventListener("click", function () {
     window.scrollTo({ top: 3060, behavior: "smooth" });
   });
-} else if (window.screen.width > 300 && window.screen.width < 500) {
+} else if (window.screen.width > 300 && window.screen.width < 700) {
   nav_section_lists[0].addEventListener("click", function () {
     window.scrollTo({ top: 195, behavior: "smooth" });
     toggleState();
