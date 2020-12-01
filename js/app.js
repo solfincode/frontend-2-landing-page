@@ -1,12 +1,11 @@
-//get DOM element from 3 sections
-// const section_one = document.querySelector("#section1 h2");
-// const section_two = document.querySelector("#section2 h2");
-// const section_three = document.querySelector("#section3 h2");
-
+// select every section in the DOM
 const sectionList = document.querySelectorAll("section");
 //select nav DOM
 const navbar_list = document.getElementById("navbar__list");
+//select each section DOM
+const sectionContainer = document.querySelectorAll(".landing__container");
 
+//navbar class
 class Navbar {
   constructor(section_one, section_two, section_three, section_four) {
     this.section_one = section_one;
@@ -16,6 +15,7 @@ class Navbar {
   }
 }
 
+//generateNavbar method
 Navbar.prototype.generateNav = (navdata) => {
   navdata.map((el) => {
     const nav_list_el = document.createElement("li");
@@ -31,7 +31,7 @@ const nav_array = new Navbar(
   sectionList[2].id,
   sectionList[3].id
 );
-//conver object into array
+//convert object into array
 const navdata = [
   nav_array.section_one,
   nav_array.section_two,
@@ -42,14 +42,14 @@ const navdata = [
 //generate navbar
 nav_array.generateNav(navdata);
 
-// after gerate sectio list and selectAll them and set initial active state
+// after generrate section list and selectAll them
 const nav_section_lists = document.querySelectorAll("#navbar__list li");
+// set initial active state for section 1
 nav_section_lists[0].classList = "activeState";
 
-// iterate nav_array value using map and insert them into nav_list_el DOM
+// iterate nav_array value using forEach and insert them into nav_list_el DOM
 function scrollEvent(e) {
   const moveY = this.scrollY;
-
   if (moveY < 800) {
     //section 1 is active
     nav_section_lists.forEach((el, index) => {
@@ -59,6 +59,8 @@ function scrollEvent(e) {
         el.classList.remove("activeState");
       }
     });
+    //add reveal class in section 1
+    sectionContainer[0].classList.add("reveal");
   } else if (moveY > 800 && moveY < 1600) {
     //section 2 is active
     nav_section_lists.forEach((el, index) => {
@@ -68,6 +70,8 @@ function scrollEvent(e) {
         el.classList.remove("activeState");
       }
     });
+    //add reveal class in section 2
+    sectionContainer[1].classList.add("reveal");
   } else if (moveY > 1600 && moveY < 2300) {
     //section 3 is active
     nav_section_lists.forEach((el, index) => {
@@ -77,6 +81,8 @@ function scrollEvent(e) {
         el.classList.remove("activeState");
       }
     });
+    //add reveal class in section 3
+    sectionContainer[2].classList.add("reveal");
   } else {
     //section 4 is active
     nav_section_lists.forEach((el, index) => {
@@ -86,6 +92,8 @@ function scrollEvent(e) {
         el.classList.remove("activeState");
       }
     });
+    //add reveal class in section 4
+    sectionContainer[3].classList.add("reveal");
   }
 }
 

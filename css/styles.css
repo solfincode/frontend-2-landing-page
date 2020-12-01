@@ -125,6 +125,8 @@ section {
 .landing__container {
   padding: 1em;
   text-align: left;
+  opacity: 0.1;
+  transition: all 0.8s ease-in-out;
 }
 
 @media only screen and (min-width: 35em) {
@@ -281,4 +283,8 @@ svg {
   top: 2px;
   left: 186px;
   cursor: pointer;
+}
+
+.reveal {
+  opacity: 1;
 }
